@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Laughable Rooms</title>
+    <link rel="stylesheet" style="text:css" href="style/style.css">
+</head>
+<body>
+
+<svg viewBox="0 0 960 300">
+    <symbol id="s-text">
+        <text text-anchor="middle" x="50%" y="80%">Laughable</text>
+    </symbol>
+
+    <g class="g-ants">
+        <use xlink:href="#s-text" class="text-copy"></use>
+        <use xlink:href="#s-text" class="text-copy"></use>
+        <use xlink:href="#s-text" class="text-copy"></use>
+        <use xlink:href="#s-text" class="text-copy"></use>
+        <use xlink:href="#s-text" class="text-copy"></use>
+    </g>
+</svg>
+
+<main>
+    <div class="card"
+         onclick="storeMeetingURI('88223986286@meet.ciscospark.com')">
+        <img src="img/paddy.png" alt="Avatar" style="width:100%">
+        <div class="container">
+            <h4><b>Paddy</b></h4>
+            <p>The Yobota Boss (figuratively)</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="img/facerecog.png" alt="Avatar" style="width:100%">
+        <div class="container">
+            <h4><b>Nobody</b></h4>
+            <p>Nobody wants to be nobody (get it?)</p>
+        </div>
+    </div>
+
+    <div id="add-new-room" class="card">
+        <img src="img/plus.png" alt="Avatar" style="width:100%">
+        <div class="container">
+            <h4><b>Add New Laughable Room</b></h4>
+            <p>Click, Click, Click</p>
+        </div>
+    </div>
+</main>
+
+<script src="home.js"></script>
+</body>
+</html>

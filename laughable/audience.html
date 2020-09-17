@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Laughable</title>
+    <link rel="stylesheet" style="text:css" href="style/momentum.css">
+    <link rel="stylesheet" style="text:css" href="style/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+<body>
+
+<div class="sidebar">
+    <a class="active">Options</a>
+    <a id="join" title="join">Join Meeting</a>
+    <a id="hangup" title="hangup">Leave Meeting</a>
+    <a id="extractlocalframe" title="extractlocalframe">Save My Face</a>
+    <a id="extractremoteframe" title="extractremoteframe">Immortalise The Other</a>
+    <a id="enablefacerec" title="enablefacerec" type="button">Expression Recognition Run</a>
+    <div class="container-fluid" id="magic">
+    </div>
+</div>
+
+<svg viewBox="0 0 960 300">
+    <symbol id="s-text">
+        <text text-anchor="middle" x="50%" y="80%">Laughable</text>
+    </symbol>
+
+    <g class="g-ants">
+        <use xlink:href="#s-text" class="text-copy"></use>
+        <use xlink:href="#s-text" class="text-copy"></use>
+        <use xlink:href="#s-text" class="text-copy"></use>
+        <use xlink:href="#s-text" class="text-copy"></use>
+        <use xlink:href="#s-text" class="text-copy"></use>
+    </g>
+</svg>
+
+<main>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <form id="constraints">
+                    <fieldset>
+                        <legend>Constraints</legend>
+                        <input id="constraints-audio" title="audio" type="checkbox" checked>
+                        <label for="constraints-audio">Audio</label>
+                        <input id="constraints-video" title="video" type="checkbox" checked>
+                        <label for="constraints-video">Video</label>
+                    </fieldset>
+                </form>
+            </div>
+
+        </div>
+
+
+        <div class="row">
+
+
+            <table id="call-status">
+                <thead>
+                <tr>
+                    <th colspan="2">Call Status</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Local Participant</td>
+                    <td id="call-status-local"></td>
+                </tr>
+                <tr>
+                    <td>Remote Participant</td>
+                    <td id="call-status-remote"></td>  <!-- TODO: Change this into an audience counter -->
+                <tr>
+                    <td>Funds raised</td>
+                    <td id="call-funds-raised">0</td>
+                </tr>
+                </tbody>
+            </table>
+
+            <div style="display: flex">
+                <div style="width:50%; position:relative;">
+                    <video style="width:100%" id="self-view" muted autoplay playsinline></video>
+                    <canvas style="width:100%; position:absolute; top:0; left:0"
+                            id="self-face-rec-overlay"></canvas>
+                </div>
+                <div style="width:50%; position:relative;">
+                    <audio id="remote-view-audio" autoplay playsinline></audio>
+                    <video style="width:100%" id="remote-view-video" autoplay muted playsinline></video>
+                    <canvas style="width:100%; position:absolute; top:0; left:0"
+                            id="remote-face-rec-overlay"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <button id="room-create">Generate stuff</button>
+    </div>
+
+
+</main>
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+<!-- app.js is your application code -->
+<script src="bundle.js"></script>
+<script src="face-api.js"></script>
+</body>
+</html>
